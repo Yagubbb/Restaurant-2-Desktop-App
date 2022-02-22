@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.manager.ManagerController">
+
+
+    <GridPane alignment="CENTER">
+        <Label text="Welcome manager" />
+        <columnConstraints>
+            <ColumnConstraints />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints />
+        </rowConstraints>
+    </GridPane>
+    <center>
+        <TabPane fx:id="tabPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" tabClosingPolicy="UNAVAILABLE" tabMinWidth="100.0" BorderPane.alignment="CENTER">
+            <tabs>
+                <Tab fx:id="financialTab" text="Financial">
+                    <content>
+                        <BorderPane prefHeight="536.0" prefWidth="642.0">
+                            <left>
+                                <VBox prefHeight="536.0" prefWidth="227.0" BorderPane.alignment="CENTER">
+                                    <children>
+                                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="35.0" text="Dates" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                                            <font>
+                                                <Font name="Arial Bold" size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <ListView fx:id="daysListView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS" />
+                                        <HBox prefHeight="100.0" prefWidth="200.0">
+                                            <children>
+                                                <Label alignment="CENTER" contentDisplay="RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Total income" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+                                                    <font>
+                                                        <Font name="Arial Bold" size="18.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="incomeLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="0.0" HBox.hgrow="ALWAYS">
+                                                    <HBox.margin>
+                                                        <Insets left="10.0" />
+                                                    </HBox.margin>
+                                                    <font>
+                                                        <Font size="18.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                            </left>
+                            <center>
+                                <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                                    <children>
+                                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="35.0" text="Orders" textAlignment="CENTER">
+                                            <font>
+                                                <Font name="Arial Bold" size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <TableView fx:id="ordersTable" onMouseClicked="#handleDoubleClick">
+                                            <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                            </columnResizePolicy>
+                                            <columns>
+
+                                                <TableColumn minWidth="-Infinity" text="Number">
+                                                    <cellValueFactory>
+                                                        <PropertyValueFactory property="orderIndex" />
+                                                    </cellValueFactory>
+                                                </TableColumn>
+
+                                                <TableColumn text="Time">
+                                                    <cellValueFactory>
+                                                        <PropertyValueFactory property="orderTime" />
+                                                    </cellValueFactory>
+                                                </TableColumn>
+
+                                                <TableColumn text="Cost">
+                                                    <cellValueFactory>
+                                                        <PropertyValueFactory property="orderCost" />
+                                                    </cellValueFactory>
+                                                </TableColumn>
+
+
+                                            </columns>
+
+                                        </TableView>
+                                        <HBox alignment="CENTER">
+                                            <children>
+                                                <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Days income" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+                                                    <font>
+                                                        <Font name="Arial Bold" size="18.0" />
+                                                    </font>
+                                                    <padding>
+                                                        <Insets top="10.0" />
+                                                    </padding>
+                                                </Label>
+                                                <Label fx:id="daysIncomeLabel" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="0.0" HBox.hgrow="ALWAYS">
+                                                    <font>
+                                                        <Font size="18.0" />
+                                                    </font>
+                                                    <padding>
+                                                        <Insets top="10.0" />
+                                                    </padding>
+                                                </Label>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                            </center>
+                        </BorderPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="employeeTab" text="Employee">
+                    <content>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                            <top>
+                                <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" text="Employee" BorderPane.alignment="CENTER">
+                                    <font>
+                                        <Font name="Arial Bold" size="18.0" />
+                                    </font>
+                                    <BorderPane.margin>
+                                        <Insets bottom="10.0" top="10.0" />
+                                    </BorderPane.margin>
+                                </Label>
+                            </top>
+                            <center>
+                                <VBox prefHeight="527.0" prefWidth="688.0" BorderPane.alignment="CENTER">
+                                    <children>
+
+                                        <HBox alignment="CENTER" prefWidth="200.0">
+                                            <children>
+                                                <VBox HBox.hgrow="ALWAYS">
+                                                    <children>
+                                                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" text="Cashier" VBox.vgrow="ALWAYS">
+                                                            <font>
+                                                                <Font size="14.0" />
+                                                            </font>
+                                                            <padding>
+                                                                <Insets bottom="5.0" top="5.0" />
+                                                            </padding>
+                                                        </Label>
+                                                        <TableView fx:id="cashiersTable" onMouseClicked="#handleClick" prefHeight="200.0" prefWidth="200.0">
+                                                            <columnResizePolicy>
+                                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                            </columnResizePolicy>
+                                                            <columns>
+                                                                <TableColumn minWidth="-Infinity" text="Name">
+                                                                    <cellValueFactory>
+                                                                        <PropertyValueFactory property="name" />
+                                                                    </cellValueFactory>
+                                                                </TableColumn>
+                                                                <TableColumn minWidth="-Infinity" text="Surname">
+                                                                    <cellValueFactory>
+                                                                        <PropertyValueFactory property="surname" />
+                                                                    </cellValueFactory>
+                                                                </TableColumn>
+                                                                <TableColumn minWidth="-Infinity" text="Age">
+                                                                    <cellValueFactory>
+                                                                        <PropertyValueFactory property="age" />
+                                                                    </cellValueFactory>
+                                                                </TableColumn>
+                                                                <TableColumn minWidth="-Infinity" text="Address">
+                                                                    <cellValueFactory>
+                                                                        <PropertyValueFactory property="address" />
+                                                                    </cellValueFactory>
+                                                                </TableColumn>
+                                                                <TableColumn minWidth="-Infinity" text="Payment">
+                                                                    <cellValueFactory>
+                                                                        <PropertyValueFactory property="payment" />
+                                                                    </cellValueFactory>
+                                                                </TableColumn>
+                                                            </columns>
+                                                        </TableView>
+                                                    </children>
+                                                </VBox>
+                                                <VBox HBox.hgrow="ALWAYS">
+                                                    <children>
+                                                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" text="Chief">
+                                                            <font>
+                                                                <Font size="14.0" />
+                                                            </font>
+                                                            <padding>
+                                                                <Insets bottom="5.0" top="5.0" />
+                                                            </padding>
+                                                        </Label>
+                                                        <TableView fx:id="chiefsTable" onMouseClicked="#handleClick" prefHeight="200.0" prefWidth="200.0">
+                                                            <columnResizePolicy>
+                                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                            </columnResizePolicy>
+                                                            <columns>
+                                                                <TableColumn minWidth="-Infinity" text="Name">
+                                                                    <cellValueFactory>
+                                                                        <PropertyValueFactory property="name" />
+                                                                    </cellValueFactory>
+                                                                </TableColumn>
+                                                                <TableColumn minWidth="-Infinity" text="Surname">
+                                                                    <cellValueFactory>
+                                                                        <PropertyValueFactory property="surname" />
+                                                                    </cellValueFactory>
+                                                                </TableColumn>
+                                                                <TableColumn minWidth="-Infinity" text="Age">
+                                                                    <cellValueFactory>
+                                                                        <PropertyValueFactory property="age" />
+                                                                    </cellValueFactory>
+                                                                </TableColumn>
+                                                                <TableColumn minWidth="-Infinity" text="Address">
+                                                                    <cellValueFactory>
+                                                                        <PropertyValueFactory property="address" />
+                                                                    </cellValueFactory>
+                                                                </TableColumn>
+                                                                <TableColumn minWidth="-Infinity" text="Payment">
+                                                                    <cellValueFactory>
+                                                                        <PropertyValueFactory property="payment" />
+                                                                    </cellValueFactory>
+                                                                </TableColumn>
+                                                            </columns>
+                                                        </TableView>
+                                                    </children>
+                                                </VBox>
+                                                <VBox HBox.hgrow="ALWAYS">
+                                                    <children>
+                                                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" text="Waiter">
+                                                            <font>
+                                                                <Font size="14.0" />
+                                                            </font>
+                                                            <padding>
+                                                                <Insets bottom="5.0" top="5.0" />
+                                                            </padding>
+                                                        </Label>
+                                                        <TableView fx:id="waitersTable" onMouseClicked="#handleClick" prefHeight="200.0" prefWidth="200.0">
+                                                            <columnResizePolicy>
+                                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                            </columnResizePolicy>
+                                                            <columns>
+                                                                <TableColumn minWidth="-Infinity" text="Name">
+                                                                    <cellValueFactory>
+                                                                        <PropertyValueFactory property="name" />
+                                                                    </cellValueFactory>
+                                                                </TableColumn>
+                                                                <TableColumn minWidth="-Infinity" text="Surname">
+                                                                    <cellValueFactory>
+                                                                        <PropertyValueFactory property="surname" />
+                                                                    </cellValueFactory>
+                                                                </TableColumn>
+                                                                <TableColumn minWidth="-Infinity" text="Age">
+                                                                    <cellValueFactory>
+                                                                        <PropertyValueFactory property="age" />
+                                                                    </cellValueFactory>
+                                                                </TableColumn>
+                                                                <TableColumn minWidth="-Infinity" text="Address">
+                                                                    <cellValueFactory>
+                                                                        <PropertyValueFactory property="address" />
+                                                                    </cellValueFactory>
+                                                                </TableColumn>
+                                                                <TableColumn minWidth="-Infinity" text="Payment">
+                                                                    <cellValueFactory>
+                                                                        <PropertyValueFactory property="payment" />
+                                                                    </cellValueFactory>
+                                                                </TableColumn>
+                                                            </columns>
+                                                        </TableView>
+                                                    </children>
+                                                </VBox>
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER" minWidth="-Infinity">
+                                            <children>
+                                                <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" text="Total payment" HBox.hgrow="ALWAYS">
+                                                    <padding>
+                                                        <Insets bottom="10.0" left="10.0" top="10.0" />
+                                                    </padding>
+                                                    <font>
+                                                        <Font name="System Bold" size="18.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="totalPaymentLabel" maxWidth="1.7976931348623157E308" text="0.0" HBox.hgrow="ALWAYS">
+                                                    <padding>
+                                                        <Insets bottom="10.0" left="10.0" top="10.0" />
+                                                    </padding>
+                                                    <font>
+                                                        <Font size="18.0" />
+                                                    </font>
+                                                    <HBox.margin>
+                                                        <Insets left="10.0" />
+                                                    </HBox.margin>
+                                                </Label>
+                                                <Button mnemonicParsing="false" onAction="#showAddEmployee" text="Add employee">
+                                                    <HBox.margin>
+                                                        <Insets bottom="10.0" right="10.0" top="10.0" />
+                                                    </HBox.margin>
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                </Button>
+                                                <Button mnemonicParsing="false" onAction="#deleteEmployee" text="Delete employee">
+                                                    <HBox.margin>
+                                                        <Insets bottom="10.0" left="10.0" right="30.0" top="10.0" />
+                                                    </HBox.margin>
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                </Button>
+                                            </children>
+                                            <VBox.margin>
+                                                <Insets bottom="10.0" top="10.0" />
+                                            </VBox.margin>
+                                        </HBox>
+                                        <HBox style="-fx-border-color: grey; -fx-border-radius: 10;" VBox.vgrow="NEVER">
+                                            <children>
+                                                <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Detailed Information" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+                                                    <padding>
+                                                        <Insets left="10.0" right="10.0" />
+                                                    </padding>
+                                                    <font>
+                                                        <Font size="18.0" />
+                                                    </font>
+                                                </Label>
+                                                <GridPane gridLinesVisible="true" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    </rowConstraints>
+                                                    <HBox.margin>
+                                                        <Insets left="10.0" right="10.0" />
+                                                    </HBox.margin>
+                                                    <children>
+                                                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Name" />
+                                                        <Label fx:id="nameLabel" alignment="CENTER" maxWidth="1.7976931348623157E308" text=" " GridPane.columnIndex="1" />
+                                                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Surname" GridPane.rowIndex="1" />
+                                                        <Label fx:id="surnameLabel" alignment="CENTER" maxWidth="1.7976931348623157E308" text=" " GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Age" GridPane.rowIndex="2" />
+                                                        <Label fx:id="ageLabel" alignment="CENTER" maxWidth="1.7976931348623157E308" text="   " GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Address" GridPane.rowIndex="3" />
+                                                        <Label fx:id="addressLabel" alignment="CENTER" maxWidth="1.7976931348623157E308" text="  " GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Payment" GridPane.rowIndex="4" />
+                                                        <Label fx:id="paymentLabel" alignment="CENTER" maxWidth="1.7976931348623157E308" text="  " GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                    </children>
+                                                </GridPane>
+                                                <VBox alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="200.0">
+                                                    <children>
+                                                        <Button alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showEditDialog" text="Edit" VBox.vgrow="ALWAYS">
+                                                            <font>
+                                                                <Font size="14.0" />
+                                                            </font>
+                                                            <VBox.margin>
+                                                                <Insets bottom="10.0" right="10.0" />
+                                                            </VBox.margin>
+                                                        </Button>
+                                                        <Button alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#deleteEmployee" text="Delete ">
+                                                            <font>
+                                                                <Font size="14.0" />
+                                                            </font>
+                                                            <VBox.margin>
+                                                                <Insets right="10.0" top="10.0" />
+                                                            </VBox.margin>
+                                                        </Button>
+                                                    </children>
+                                                    <HBox.margin>
+                                                        <Insets />
+                                                    </HBox.margin>
+                                                    <padding>
+                                                        <Insets left="20.0" right="10.0" />
+                                                    </padding>
+                                                </VBox>
+                                            </children>
+                                            <VBox.margin>
+                                                <Insets top="10.0" />
+                                            </VBox.margin>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                            </center>
+                        </BorderPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+
+
+</BorderPane>

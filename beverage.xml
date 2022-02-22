@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<foodTable>
+
+    <beverage>
+        <name>Cola</name>
+        <cost>3</cost>
+    </beverage>
+    <beverage>
+        <name>Coffee</name>
+        <cost>1.5</cost>
+    </beverage>
+    <beverage>
+        <name>Water</name>
+        <cost>0.5</cost>
+    </beverage>
+
+</foodTable>

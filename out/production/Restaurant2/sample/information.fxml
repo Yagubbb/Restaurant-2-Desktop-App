@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.Font?>
+<DialogPane fx:id="mainPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.InformationController">
+    <headerText>
+        Add New Order
+    </headerText>
+    <header>
+        <Label alignment="CENTER" text="Information">
+            <font>
+                <Font name="Arial Black" size="16.0" />
+            </font>
+         <padding>
+            <Insets bottom="5.0" top="5.0" />
+         </padding>
+        </Label>
+    </header>
+   <content>
+      <TableView maxHeight="-Infinity" maxWidth="1.7976931348623157E308">
+        <columns>
+          <TableColumn minWidth="-Infinity" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+   </content>
+   <buttonTypes>
+      <ButtonType fx:constant="CLOSE" />
+   </buttonTypes>
+</DialogPane>

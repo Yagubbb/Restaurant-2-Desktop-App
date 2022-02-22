@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<DialogPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.manager.EmployeeDialogController">
+    <headerText>
+        Fill in the information for the new Contact
+    </headerText>
+    <content>
+        <GridPane hgap="10" vgap="10">
+            <Label text="First name: " GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="firstNameField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+            <Label text="Surname" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="surnameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <Label text="Age" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+
+            <Label text="Address" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <TextField fx:id="addressField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="Payment" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+
+            <Label text="Working as: " GridPane.columnIndex="0" GridPane.rowIndex="5" />
+         <ComboBox fx:id="typeBox"  prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+             <items>
+                 <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="Chief" />
+                     <String fx:value="Waiter" />
+                     <String fx:value="Cashier" />
+                 </FXCollections>
+
+             </items>
+             <value>
+                 <String fx:value="Chief" />
+             </value>
+         </ComboBox>
+         <Spinner fx:id="ageSpinner" editable="true" initialValue="18" max="50" min="18" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         <Spinner fx:id="paymentSpinner" editable="true"  initialValue="300" min="300" max="2000" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+            <columnConstraints>
+                <ColumnConstraints />
+                <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" />
+            <RowConstraints />
+            </rowConstraints>
+
+        </GridPane>
+
+    </content>
+    <header>
+        <Label alignment="CENTER" text="Add new employee">
+            <font>
+                <Font size="15.0" />
+            </font>
+            <padding>
+                <Insets bottom="10.0" top="10.0" />
+            </padding>
+        </Label>
+    </header>
+</DialogPane>

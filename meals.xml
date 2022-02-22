@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<foodTable>
+    <meal>
+        <name>Sandwich</name>
+        <cost>2.5</cost>
+    </meal>
+    <meal>
+        <name>Burger</name>
+        <cost>2.5</cost>
+    </meal>
+    <meal>
+        <name>Hotdog</name>
+        <cost>1.5</cost>
+    </meal>
+    <meal>
+        <name>Pizza</name>
+        <cost>5</cost>
+    </meal>
+    <meal>
+        <name>Nuggets</name>
+        <cost>1</cost>
+    </meal>
+    <meal>
+        <name>Donut</name>
+        <cost>2</cost>
+    </meal>
+    <meal>
+        <name>Fries</name>
+        <cost>1</cost>
+    </meal>
+
+
+
+</foodTable>

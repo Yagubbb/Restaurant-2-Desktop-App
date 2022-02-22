@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainStaff" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.staff.StaffController">
+    <right>
+        <VBox>
+            <children>
+                <Label alignment="CENTER" minWidth="-Infinity" prefHeight="37.0" prefWidth="252.0" text="Today's orders" textOverrun="CLIP">
+                    <font>
+                        <Font name="Arial Black" size="16.0" />
+                    </font>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+                </Label>
+                <TableView fx:id="todaysOrderTable" onMouseClicked="#handleDoubleClick">
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                    <columns>
+
+                        <TableColumn minWidth="-Infinity" text="Number">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="orderIndex" />
+                            </cellValueFactory>
+                        </TableColumn>
+
+                        <TableColumn text="Time">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="orderTime" />
+                            </cellValueFactory>
+                        </TableColumn>
+
+                        <TableColumn text="Cost">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="orderCost" />
+                            </cellValueFactory>
+                        </TableColumn>
+
+
+
+                    </columns>
+
+                </TableView>
+            </children>
+        </VBox>
+    </right>
+    <center>
+        <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <top>
+                <Label minWidth="-Infinity" text="Order" textOverrun="CLIP" BorderPane.alignment="CENTER">
+                    <BorderPane.margin>
+                        <Insets bottom="3.0" top="10.0" />
+                    </BorderPane.margin>
+                    <font>
+                        <Font name="Arial Black" size="26.0" />
+                    </font>
+                </Label>
+            </top>
+            <bottom>
+                <Button fx:id="exitButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleExit" text="Exit" BorderPane.alignment="CENTER" />
+            </bottom>
+            <center>
+                <GridPane fx:id="staffWindowCenterGrid" prefHeight="306.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="120.0" minHeight="0.0" percentHeight="7.0" vgrow="SOMETIMES" />
+                        <RowConstraints percentHeight="70.0" vgrow="SOMETIMES" />
+                        <RowConstraints fillHeight="false" percentHeight="10.0" vgrow="NEVER" />
+                        <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <TableView fx:id="orderTable" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onKeyPressed="#handleKeyPressed" GridPane.columnSpan="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                            <columnResizePolicy>
+                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                            </columnResizePolicy>
+                            <columns>
+                                <TableColumn text="Food">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="food" />
+                                    </cellValueFactory>
+                                </TableColumn>
+
+                                <TableColumn text="Quantity">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="quantity" />
+                                    </cellValueFactory>
+                                </TableColumn>
+
+                                <TableColumn text="Total">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="total" />
+                                    </cellValueFactory>
+                                </TableColumn>
+                            </columns>
+                        </TableView>
+                        <Label alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" text="Total" GridPane.rowIndex="3">
+                            <font>
+                                <Font name="Arial Black" size="16.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="totalCost" alignment="CENTER" maxWidth="1.7976931348623157E308" text="0.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                            <font>
+                                <Font name="Arial" size="16.0" />
+                            </font>
+                        </Label>
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#showAddOrderDialog" text="Add order" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                            <GridPane.margin>
+                                <Insets right="10.0" />
+                            </GridPane.margin>
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Button>
+                        <Label alignment="TOP_LEFT" text="Order list" textAlignment="CENTER" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                            <font>
+                                <Font name="Arial Black" size="20.0" />
+                            </font>
+                            <GridPane.margin>
+                                <Insets left="20.0" />
+                            </GridPane.margin>
+                        </Label>
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                     <children>
+                        <Button fx:id="deleteOrderButton" alignment="CENTER" mnemonicParsing="false" onAction="#deleteOrder" text="Delete selected" textAlignment="JUSTIFY" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button alignment="CENTER" layoutX="98.0" layoutY="10.0" mnemonicParsing="false" onAction="#clearOrder" text="Clear" textAlignment="JUSTIFY" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                              <Button fx:id="finishOrderButton" alignment="CENTER" mnemonicParsing="false" onAction="#finishOrder" text="Finish order" textAlignment="JUSTIFY" HBox.hgrow="ALWAYS">
+                                  <font>
+                                      <Font size="15.0" />
+                                  </font>
+                              </Button>
+                     </children>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </HBox>
+                    </children>
+                </GridPane>
+            </center>
+        </BorderPane>
+    </center>
+
+    <left>
+        <VBox prefHeight="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label alignment="CENTER" maxWidth="1.7976931348623157E308" minWidth="-Infinity" text="Menu" textOverrun="CLIP" VBox.vgrow="ALWAYS">
+                    <font>
+                        <Font name="Arial Black" size="16.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="15.0" />
+                    </VBox.margin>
+                </Label>
+                <TableView fx:id="mealTable">
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                    <columns>
+                        <TableColumn minWidth="-Infinity" text="Foods">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="name" />
+                            </cellValueFactory>
+                        </TableColumn>
+
+                        <TableColumn text="Cost">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="cost" />
+                            </cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                </TableView>
+                <TableView fx:id="beverageTable">
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                    <columns>
+                        <TableColumn minWidth="-Infinity" text="Beverage">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="name" />
+                            </cellValueFactory>
+                        </TableColumn>
+
+                        <TableColumn text="Cost">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="cost" />
+                            </cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                </TableView>
+
+            </children>
+        </VBox>
+    </left>
+
+</BorderPane>

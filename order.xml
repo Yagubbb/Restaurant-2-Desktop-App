@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<orders>
+<order>
+	<food>Test</food>
+	<quantity>1</quantity>
+	<total>3.5</total>
+	<time>today</time>
+</order>
+<order>
+	<food>Test</food>
+	<quantity>2</quantity>
+	<total>7.0</total>
+	<time>today</time>
+</order>
+<order>
+	<food>Test</food>
+	<quantity>4</quantity>
+	<total>14.0</total>
+	<time>today</time>
+</order>
+<order>
+	<food>Test</food>
+	<quantity>2</quantity>
+	<total>7.0</total>
+	<time>today</time>
+</order>
+<order>
+	<food>Test</food>
+	<quantity>1</quantity>
+	<total>3.5</total>
+	<time>today</time>
+</order>
+<order>
+	<food>Test</food>
+	<quantity>1</quantity>
+	<total>3.5</total>
+	<time>2022-01-31</time>
+</order>
+</orders>
