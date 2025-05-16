@@ -13,6 +13,7 @@ import sample.menu.BeverageData;
 import sample.menu.Food;
 import sample.menu.MealData;
 
+
 import java.io.IOException;
 import java.util.Optional;
 
@@ -61,10 +62,15 @@ public class StaffController {
             Pane orderDialogPane = fxmlLoader.load();
 
             OrderController orderController = fxmlLoader.getController();
+
             Dialog<ButtonType> dialog = new Dialog<>();
             dialog.setDialogPane((DialogPane) orderDialogPane);
             dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
             dialog.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
+
+            dialog.getDialogPane().getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
+
+            dialog.getDialogPane().getStyleClass().add("pop");
 
             Optional<ButtonType> result = dialog.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
@@ -144,7 +150,9 @@ public class StaffController {
                 Dialog<ButtonType> dialog = new Dialog<>();
                 dialog.setDialogPane((DialogPane) informationDialogPane);
                 dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
+                dialog.getDialogPane().getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
 
+                dialog.getDialogPane().getStyleClass().add("pop");
                 informationController.setTable(selectedItem);
                 dialog.showAndWait();
 

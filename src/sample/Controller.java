@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -19,7 +20,11 @@ public class Controller {
     @FXML
     private Label label;
 
+    private Stage primaryStage;
 
+    public void setPrimaryStage(Stage primaryStage) {
+        this.primaryStage = primaryStage;
+    }
 
     @FXML
     public void changePane() throws IOException {
@@ -27,10 +32,12 @@ public class Controller {
         if (managerToggleButton.isSelected()) {
 
             loader.setLocation(getClass().getResource("manager/managerwindow.fxml"));
+
         } else {
             loader.setLocation(getClass().getResource("staff/staffwindow.fxml"));
 
         }
+        primaryStage.setMaximized(true);
         main.setCenter(loader.load());
     }
 

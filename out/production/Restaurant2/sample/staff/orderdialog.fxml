@@ -1,48 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DialogPane?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Spinner?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<?import javafx.collections.FXCollections?>
-<?import java.lang.String?>
-<DialogPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.staff.OrderController">
+<DialogPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.staff.OrderController">
     <headerText>
         Add New Order
     </headerText>
     <content>
         <GridPane hgap="10" vgap="10">
             <Label text="Order: " GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <ComboBox fx:id="orderComboBox" prefWidth="150.0" GridPane.columnIndex="1">
+            <JFXComboBox fx:id="orderComboBox" style="-fx-text-fill: #E6E4DD" prefWidth="150.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS">
                 <items>
                     <FXCollections fx:factory="observableArrayList">
-                        <String fx:value="Sandwich"/>
-                        <String fx:value="Burger"/>
-                        <String fx:value="Hotdog"/>
-                        <String fx:value="Pizza"/>
-                        <String fx:value="Nuggets"/>
-                        <String fx:value="Donut"/>
-                        <String fx:value="Fries"/>
-                        <String fx:value="Cola"/>
-                        <String fx:value="Coffee"/>
-                        <String fx:value="Water"/>
+                        <String fx:value="Sandwich" />
+                        <String fx:value="Burger" />
+                        <String fx:value="Hotdog" />
+                        <String fx:value="Pizza" />
+                        <String fx:value="Nuggets" />
+                        <String fx:value="Donut" />
+                        <String fx:value="Fries" />
+                        <String fx:value="Cola" />
+                        <String fx:value="Coffee" />
+                        <String fx:value="Water" />
                     </FXCollections>
 
 
                 </items>
                 <value>
-                    <String fx:value="Sandwich"/>
+                    <String fx:value="Sandwich" />
                 </value>
 
-            </ComboBox>
+            </JFXComboBox>
 
             <Label text="Quantity: " GridPane.columnIndex="0" GridPane.rowIndex="1" />
-         <Spinner fx:id="quantitySpinner" editable="true" initialValue="1" layoutX="340.0" layoutY="20.0" max="10" min="0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         <Spinner fx:id="quantitySpinner" editable="true" initialValue="1" layoutX="340.0" layoutY="20.0" max="10" min="0" minWidth="-Infinity" style="-fx-background-color:  #50727B" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          <columnConstraints>
             <ColumnConstraints />
             <ColumnConstraints />

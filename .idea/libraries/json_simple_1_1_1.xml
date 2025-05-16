@@ -2,10 +2,13 @@
   <library name="json-simple-1.1.1">
     <CLASSES>
       <root url="jar://$USER_HOME$/Downloads/json-simple-1.1.1.jar!/" />
-      <root url="file://$PROJECT_DIR$/../../fx/javafx-sdk-17.0.1/lib" />
+      <root url="file://$USER_HOME$/fx/javafx-sdk-17.0.1/lib" />
+      <root url="file://$PROJECT_DIR$/../fx/javafx-sdk-17.0.1/lib" />
+      <root url="jar://$PROJECT_DIR$/../fx/jfoenix-9.0.10.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
-    <jarDirectory url="file://$PROJECT_DIR$/../../fx/javafx-sdk-17.0.1/lib" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../fx/javafx-sdk-17.0.1/lib" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/fx/javafx-sdk-17.0.1/lib" recursive="false" />
   </library>
 </component>

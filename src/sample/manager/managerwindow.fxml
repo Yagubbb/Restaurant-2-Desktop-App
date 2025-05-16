@@ -1,23 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.cell.PropertyValueFactory?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.manager.ManagerController">
+<BorderPane fx:id="manager" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.manager.ManagerController">
 
 
     <GridPane alignment="CENTER">
@@ -30,9 +19,9 @@
         </rowConstraints>
     </GridPane>
     <center>
-        <TabPane fx:id="tabPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" tabClosingPolicy="UNAVAILABLE" tabMinWidth="100.0" BorderPane.alignment="CENTER">
+        <TabPane fx:id="tabPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity"  tabClosingPolicy="UNAVAILABLE" tabMinWidth="100.0" BorderPane.alignment="CENTER">
             <tabs>
-                <Tab fx:id="financialTab" text="Financial">
+                <Tab fx:id="financialTab"  text="Financial">
                     <content>
                         <BorderPane prefHeight="536.0" prefWidth="642.0">
                             <left>
@@ -98,6 +87,9 @@
 
 
                                             </columns>
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </VBox.margin>
 
                                         </TableView>
                                         <HBox alignment="CENTER">
@@ -130,9 +122,9 @@
                     <content>
                         <BorderPane prefHeight="200.0" prefWidth="200.0">
                             <top>
-                                <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" text="Employee" BorderPane.alignment="CENTER">
+                                <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" style="-fx-font-size: 20px; -fx-font-family : 'Arial Black'" text="Employee" BorderPane.alignment="CENTER">
                                     <font>
-                                        <Font name="Arial Bold" size="18.0" />
+                                        <Font name="Arial Bold" size="20.0" />
                                     </font>
                                     <BorderPane.margin>
                                         <Insets bottom="10.0" top="10.0" />
@@ -147,10 +139,7 @@
                                             <children>
                                                 <VBox HBox.hgrow="ALWAYS">
                                                     <children>
-                                                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" text="Cashier" VBox.vgrow="ALWAYS">
-                                                            <font>
-                                                                <Font size="14.0" />
-                                                            </font>
+                                                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" style="-fx-font-size: 16px; -fx-font-family : 'Arial Black'" text="Cashier" VBox.vgrow="ALWAYS">
                                                             <padding>
                                                                 <Insets bottom="5.0" top="5.0" />
                                                             </padding>
@@ -188,13 +177,14 @@
                                                             </columns>
                                                         </TableView>
                                                     </children>
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
                                                 </VBox>
                                                 <VBox HBox.hgrow="ALWAYS">
                                                     <children>
-                                                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" text="Chief">
-                                                            <font>
-                                                                <Font size="14.0" />
-                                                            </font>
+                                                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" style="-fx-font-size: 16px; -fx-font-family : 'Arial Black'" text="Chief">
+
                                                             <padding>
                                                                 <Insets bottom="5.0" top="5.0" />
                                                             </padding>
@@ -232,13 +222,14 @@
                                                             </columns>
                                                         </TableView>
                                                     </children>
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
                                                 </VBox>
                                                 <VBox HBox.hgrow="ALWAYS">
                                                     <children>
-                                                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" text="Waiter">
-                                                            <font>
-                                                                <Font size="14.0" />
-                                                            </font>
+                                                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" style="-fx-font-size: 16px; -fx-font-family : 'Arial Black'" text="Waiter">
+
                                                             <padding>
                                                                 <Insets bottom="5.0" top="5.0" />
                                                             </padding>
@@ -276,26 +267,25 @@
                                                             </columns>
                                                         </TableView>
                                                     </children>
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
                                                 </VBox>
                                             </children>
                                         </HBox>
                                         <HBox alignment="CENTER" minWidth="-Infinity">
                                             <children>
-                                                <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" text="Total payment" HBox.hgrow="ALWAYS">
+                                                <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" style="-fx-font-size: 20px; -fx-font-family : 'Arial Black'" text="Total payment" HBox.hgrow="ALWAYS">
                                                     <padding>
                                                         <Insets bottom="10.0" left="10.0" top="10.0" />
                                                     </padding>
-                                                    <font>
-                                                        <Font name="System Bold" size="18.0" />
-                                                    </font>
+
                                                 </Label>
-                                                <Label fx:id="totalPaymentLabel" maxWidth="1.7976931348623157E308" text="0.0" HBox.hgrow="ALWAYS">
+                                                <Label fx:id="totalPaymentLabel" maxWidth="1.7976931348623157E308" style="-fx-font-size: 20px; -fx-font-family : 'Arial Black'" text="0.0" HBox.hgrow="ALWAYS">
                                                     <padding>
                                                         <Insets bottom="10.0" left="10.0" top="10.0" />
                                                     </padding>
-                                                    <font>
-                                                        <Font size="18.0" />
-                                                    </font>
+                                                    
                                                     <HBox.margin>
                                                         <Insets left="10.0" />
                                                     </HBox.margin>
@@ -323,7 +313,7 @@
                                         </HBox>
                                         <HBox style="-fx-border-color: grey; -fx-border-radius: 10;" VBox.vgrow="NEVER">
                                             <children>
-                                                <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Detailed Information" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+                                                <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-font-size: 20px; -fx-font-family : 'Arial Black'" text="Detailed Information" textAlignment="CENTER" HBox.hgrow="ALWAYS">
                                                     <padding>
                                                         <Insets left="10.0" right="10.0" />
                                                     </padding>
@@ -331,7 +321,7 @@
                                                         <Font size="18.0" />
                                                     </font>
                                                 </Label>
-                                                <GridPane gridLinesVisible="true" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                                                <GridPane fx:id="gridPaneEmployees" gridLinesVisible="true" maxWidth="1.7976931348623157E308" style="-fx-background-color: #4C4F4E;" styleClass="label" HBox.hgrow="ALWAYS">
                                                     <columnConstraints>
                                                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
                                                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />

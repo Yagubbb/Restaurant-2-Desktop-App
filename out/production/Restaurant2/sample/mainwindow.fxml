@@ -7,27 +7,27 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="main" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<?import com.jfoenix.controls.JFXToggleButton?>
+<BorderPane fx:id="main" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller" id="main" styleClass="pane">
     <top>
        <!-- <fx:define>
             <ToggleGroup fx:id="userToggleGroup" />
         </fx:define>-->
        <HBox>
-           <ToggleButton fx:id="staffToggleButton" maxWidth="Infinity" onAction="#changePane" text="Staff" HBox.hgrow="ALWAYS">
+           <JFXToggleButton styleClass="button-toggle" style="-fx-font-family : 'Adobe Devanagari'" fx:id="staffToggleButton" maxWidth="Infinity" onAction="#changePane" text="Staff" HBox.hgrow="ALWAYS">
             <toggleGroup>
                <ToggleGroup fx:id="userToggleGroup" />
-            </toggleGroup></ToggleButton>
-           <ToggleButton fx:id="managerToggleButton" maxWidth="Infinity" onAction="#changePane" text="Manager" toggleGroup="$userToggleGroup" HBox.hgrow="ALWAYS" />
+            </toggleGroup></JFXToggleButton>
+           <JFXToggleButton styleClass="button-toggle" fx:id="managerToggleButton" maxWidth="Infinity" onAction="#changePane" text="Manager" toggleGroup="$userToggleGroup" HBox.hgrow="ALWAYS" />
        </HBox>
 
     </top>
     <center>
         <BorderPane>
+
             <center>
-                <Label fx:id="label" text="Welcome to Restaurant">
-               <font>
-                  <Font name="Arial Bold" size="16.0" />
-               </font></Label>
+                <Label styleClass="title" fx:id="label" text="RestroSuite">
+               </Label>
             </center>
 
         </BorderPane>

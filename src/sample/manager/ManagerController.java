@@ -99,6 +99,9 @@ public class ManagerController {
             dialog.setDialogPane((DialogPane) employeeDialogPane);
             dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
             dialog.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
+            dialog.getDialogPane().getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
+
+            dialog.getDialogPane().getStyleClass().add("pop");
             dialog.show();
 
 
@@ -169,6 +172,9 @@ public class ManagerController {
             dialog.setDialogPane((DialogPane) employeeDialogPane);
             dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
             dialog.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
+            dialog.getDialogPane().getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
+
+            dialog.getDialogPane().getStyleClass().add("pop");
             employeeDialogController.editEmployee(selectedEmployee);
             dialog.show();
 
@@ -206,7 +212,9 @@ public class ManagerController {
                 Dialog<ButtonType> dialog = new Dialog<>();
                 dialog.setDialogPane((DialogPane) informationDialogPane);
                 dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
+                dialog.getDialogPane().getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
 
+                dialog.getDialogPane().getStyleClass().add("pop");
                 informationController.setTable(selectedItem);
                 dialog.showAndWait();
 
