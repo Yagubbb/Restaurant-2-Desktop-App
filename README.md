@@ -35,8 +35,18 @@ A modern Java desktop application for restaurant management. This app supports s
 - `resources/` - Images and styles
 
 ## Screenshots
-<!-- Add screenshots here by placing images in the resources/ or a screenshots/ folder and referencing them below -->
-<!-- ![Main Window](resources/back.jpg) -->
+
+### Main Window
+![Main Window](resources/screenshots/main_window.png)
+
+### Manager - Financial Overview
+![Manager Financial](resources/screenshots/manager_financial.png)
+
+### Manager - Employee Management
+![Manager Employee](resources/screenshots/manager_employee.png)
+
+### Staff - Order Screen
+![Staff Order](resources/screenshots/staff_order.png)
 
 ## License
 This project is licensed under the MIT License. 
