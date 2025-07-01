@@ -1,0 +1,21 @@
+[
+  {
+    " order1 10:59 ": [
+      {
+        "total": 5.0,
+        "quantity": 2,
+        "name": "Burger"
+      },
+      {
+        "total": 5.0,
+        "quantity": 5,
+        "name": "Nuggets"
+      },
+      {
+        "total": 1.5,
+        "quantity": 3,
+        "name": "Water"
+      }
+    ]
+  }
+]
